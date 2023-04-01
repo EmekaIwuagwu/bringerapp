@@ -1,9 +1,16 @@
 import { StyleSheet, Text, View, Image, Alert, TouchableOpacity, TextInput } from "react-native";
 import React , {useState, useMemo} from "react";
 import {Picker} from '@react-native-picker/picker';
+import { useNavigation } from "@react-navigation/native";
 
 
 const VerifyNumber2 = () => {
+
+  const navigation = useNavigation();
+
+  const Redirect = () =>{
+    navigation.navigate('Profile');
+  }
 
   return (
     <View style={styles.container}>
@@ -14,7 +21,7 @@ const VerifyNumber2 = () => {
       <Text style={styles.hometext}>Verify your Phone Number</Text>
       <Text style={styles.hometext2}>Bringer will need to verify your PhoneNumber</Text>
 
-      <View style={{flexDirection :'row', alignItems : 'center', justifyContent :'space-between'}}>
+      <View style={{flexDirection :'row', alignItems : 'center', justifyContent :'space-between', paddingHorizontal:8}}>
       <TextInput
         placeholder = " "
         onChangeText={AccountNum => this.setState({AccountNum})}
@@ -51,10 +58,9 @@ const VerifyNumber2 = () => {
         style={styles.input}
         maxLength={15} 
     />
-    
   </View>
 
-      <TouchableOpacity>  
+      <TouchableOpacity onPress={()=> Redirect()}>  
         <View style={styles.button}>  
         <Text style={styles.buttonText}>Next</Text>  
         </View>  
@@ -106,7 +112,6 @@ const styles = StyleSheet.create({
     width : 40,
     height : 46,
     top : 30,
-    left : 66,
     borderRadius : 10
   },
   picker :{
