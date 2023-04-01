@@ -21,7 +21,7 @@ const VerifyNumber2 = () => {
       <Text style={styles.hometext}>Verify your Phone Number</Text>
       <Text style={styles.hometext2}>Bringer will need to verify your PhoneNumber</Text>
 
-      <View style={{flexDirection :'row', alignItems : 'center', justifyContent :'space-between', paddingHorizontal:8}}>
+      <View style={{flexDirection :'row', alignItems : 'center', justifyContent :'space-evenly', paddingHorizontal:8}}>
       <TextInput
         placeholder = " "
         onChangeText={AccountNum => this.setState({AccountNum})}
