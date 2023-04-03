@@ -6,10 +6,15 @@ import { useNavigation } from "@react-navigation/native";
 
 const VerifyNumber2 = () => {
 
+  const [otp, setOtp] = useState('');
   const navigation = useNavigation();
 
   const Redirect = () =>{
-    navigation.navigate('Profile');
+    if (otp =="123456"){
+      navigation.navigate('HomePage');
+    }else{
+      Alert.alert('Invalid OTP');
+    }
   }
 
   return (
@@ -23,48 +28,22 @@ const VerifyNumber2 = () => {
 
       <View style={{flexDirection :'row', alignItems : 'center', justifyContent :'space-evenly', paddingHorizontal:8}}>
       <TextInput
-        placeholder = " "
-        onChangeText={AccountNum => this.setState({AccountNum})}
+      value={otp}
+        placeholder = "Enter OTP"
+        onChangeText={(otp)=>setOtp(otp)}
         style={styles.input}
         maxLength={15} 
     />
-        <TextInput
-        placeholder = " "
-        onChangeText={AccountNum => this.setState({AccountNum})}
-        style={styles.input}
-        maxLength={15} 
-    />
-        <TextInput
-        placeholder = " "
-        onChangeText={AccountNum => this.setState({AccountNum})}
-        style={styles.input}
-        maxLength={15} 
-    />
-        <TextInput
-        placeholder = " "
-        onChangeText={AccountNum => this.setState({AccountNum})}
-        style={styles.input}
-        maxLength={15} 
-    />
-        <TextInput
-        placeholder = " "
-        onChangeText={AccountNum => this.setState({AccountNum})}
-        style={styles.input}
-        maxLength={15} 
-    />
-        <TextInput
-        placeholder = " "
-        onChangeText={AccountNum => this.setState({AccountNum})}
-        style={styles.input}
-        maxLength={15} 
-    />
+
   </View>
 
-      <TouchableOpacity onPress={()=> Redirect()}>  
+    <View>
+    <TouchableOpacity onPress={()=> Redirect()}>  
         <View style={styles.button}>  
         <Text style={styles.buttonText}>Next</Text>  
         </View>  
       </TouchableOpacity>  
+    </View>
       
     </View>
   );
@@ -107,11 +86,11 @@ const styles = StyleSheet.create({
     top : 10
   },
   input:{
-    marginTop : 25,
+    marginTop : 50,
+    padding: 5,
     backgroundColor : '#D9D9D957',
-    width : 40,
+    width : 282,
     height : 46,
-    top : 30,
     borderRadius : 10
   },
   picker :{
