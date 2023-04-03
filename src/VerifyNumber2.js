@@ -30,9 +30,9 @@ const VerifyNumber2 = () => {
       <TextInput
       value={otp}
         placeholder = "Enter OTP"
-        onChangeText={(otp)=>setOtp(otp)}
+        onChangeText={(text)=>setOtp(text)}
         style={styles.input}
-        maxLength={15} 
+        maxLength={300} 
     />
 
   </View>

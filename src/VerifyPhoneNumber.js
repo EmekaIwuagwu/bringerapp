@@ -44,9 +44,9 @@ const VerifyPhoneNumber = () => {
       <TextInput
         value={telphone}
         placeholder=" Telephone Number"
-        onChangeText={(telephone)=>setTelephone(telephone)}
+        onChangeText={(text)=>setTelephone(text)}
         style={styles.input}
-        maxLength={15}
+        maxLength={300}
       />
 
       <View>
